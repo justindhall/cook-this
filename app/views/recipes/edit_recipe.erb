@@ -1,0 +1,18 @@
+<h3>What did you change?</h3>
+<form method="post" action="/recipes/<%=@recipe.id%>">
+  <input id="hidden" type="hidden" name="_method" value="PATCH">
+  <p>Name: <input type="text" name="name" value="<%= @recipe.name %>"></p>
+  <label>
+    Instructions
+    <textarea name="instructions"><%= @recipe.instructions %></textarea>
+  </label>
+  <p>
+    Secret?
+    <% if @recipe.private %>
+      <input type="checkbox" name="private"  checked>
+    <% else %>
+      <input type="checkbox" name="private" >
+    <% end %>
+  </p>
+  <input class="btn btn-primary" type="submit">
+</form>

@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="col-md-8 col-md-offset-2">
+    <h2>Cook This!</h2>
+    <div class="content">
+      <p>Welcome to the Cook This! If you are looking for a new dish to try, this is the place for you!
+    </div>
+  </div>
+</div>
+
+<div class="content">
+  <% if logged_in? %>
+
+    <a href="/recipes/new"> Create Recipe </a>
+    <br />
+    <a href="/logout"> Log Out </a>
+
+  <% else %>
+    <a href="/signup">Sign Up</a>
+    <br />
+    <a href="/login"> Sign In </a>
+  <%end %>
+</div>

@@ -15,7 +15,8 @@ ActiveRecord::Schema.define(version: 2020_08_15_160003) do
   create_table "recipes", force: :cascade do |t|
     t.string "name"
     t.integer "user_id"
-    t.boolean "private"
+    t.boolean "private", default: false
+    t.string "instructions"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

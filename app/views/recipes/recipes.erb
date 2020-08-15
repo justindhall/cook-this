@@ -1,0 +1,25 @@
+<p> What's for dinner tonight, <%= current_user.username %>?
+<h2> Recipes: </h2>
+
+<% @recipes.each do |recipe| %>
+  <div>
+    <%= recipe.name %>:
+    <br />
+    <%= recipe.instructions %>
+  </div>
+  <% if recipe.user_id == current_user.id %>
+    <a href="/recipes/<%=recipe.id%>/edit" >Tweak Recipe</a>
+  <% end %>
+  <form method="post" action="/recipes/<%=recipe.id%>">
+    <input id="hidden" type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete Recipe">
+  </form>
+  <br/>
+  <br/>
+<% end %>
+
+<div class="content" style="padding-top: 16px;">
+  <a href="/recipes/new"> Create Recipe </a>
+  <br />
+  <a href="/logout"> Log Out </a>
+</div>

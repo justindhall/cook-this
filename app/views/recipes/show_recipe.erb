@@ -1,0 +1,15 @@
+<p>Here's your recipe:</p>
+
+<p><%= @recipe.name %></p>
+
+<p><%= @recipe.instructions %></p>
+
+<form method="post" action="/recipes/<%=@recipe.id%>">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Recipe">
+</form>
+<br/>
+<a href="/recipes/<%=@recipe.id%>/edit">Tweak Recipe</a>
+<br/>
+<br/>
+<a href="/recipes">View all Recipes</a>
