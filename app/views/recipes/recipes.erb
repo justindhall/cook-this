@@ -9,11 +9,11 @@
   </div>
   <% if recipe.user_id == current_user.id %>
     <a href="/recipes/<%=recipe.id%>/edit" >Tweak Recipe</a>
+    <form method="post" action="/recipes/<%=recipe.id%>">
+      <input id="hidden" type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="Delete Recipe">
+    </form>
   <% end %>
-  <form method="post" action="/recipes/<%=recipe.id%>">
-    <input id="hidden" type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Delete Recipe">
-  </form>
   <br/>
   <br/>
 <% end %>
